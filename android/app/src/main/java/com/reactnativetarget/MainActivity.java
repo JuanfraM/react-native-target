@@ -1,4 +1,4 @@
-package com.reactnativebase;
+package com.reactnativetarget;
 
 import com.reactnativenavigation.controllers.SplashActivity;
 

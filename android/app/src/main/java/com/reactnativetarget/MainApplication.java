@@ -1,4 +1,4 @@
-package com.reactnativebase;
+package com.reactnativetarget;
 
 import android.support.annotation.Nullable;
 import com.reactnativenavigation.NavigationApplication;
