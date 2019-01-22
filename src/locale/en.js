@@ -1,12 +1,17 @@
 export default {
   SIGN_IN: {
-    title: 'Sign in',
-    email: 'Email',
-    password: 'Password',
-    button: 'Sign in'
+    title: 'SIGN IN',
+    email: 'EMAIL',
+    password: 'PASSWORD',
+    button: 'SIGN IN',
+    forgotPassword: 'Forgot your password?',
+    connectFacebook: 'CONNECT WITH FACEBOOK'
+  },
+  SIGN_UP: {
+    title: 'SIGN UP'
   },
 
   MAIN_SCREEN: {
-    logout: 'Sign out'
+    logout: 'SIGN OUT'
   }
 };

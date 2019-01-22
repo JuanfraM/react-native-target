@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, TextInput, Text } from 'react-native';
+import { View, TextInput, Text, ViewPropTypes } from 'react-native';
 import styles from './styles';
 
-const Input = ({ input: { onChange, ...restInput }, password = false, label, meta: { touched, error } }) => (
-  <View>
-    {label && <Text>{label}</Text>}
+const Input = ({ input: { onChange, ...restInput }, inputContainer, password = false, label, meta: { touched, error } }) => (
+  <View style={[styles.inputContainer, inputContainer]}>
+    {label && <Text style={styles.label}>{label}</Text>}
     <View>
       <TextInput
         style={styles.input}
@@ -13,15 +13,17 @@ const Input = ({ input: { onChange, ...restInput }, password = false, label, met
         secureTextEntry={password}
         {...restInput}
       />
-      {touched && error && <Text>{error}</Text>}
+      {touched && error && <Text style={styles.error}>{error}</Text>}
     </View>
   </View>
 );
 
 const { string, object, bool } = PropTypes;
+const { style } = ViewPropTypes;
 
 Input.propTypes = {
   input: object.isRequired,
+  inputContainer: style,
   label: string,
   meta: object,
   password: bool

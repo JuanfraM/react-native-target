@@ -55,5 +55,10 @@
 		"preset": "react-native",
 		"testEnvironment": "jsdom",
 		"setupTestFrameworkScriptFile": "<rootDir>/tests/setup-tests.js"
+	},
+	"rnpm": {
+		"assets": [
+			"./src/assets/fonts/"
+		]
 	}
 }
