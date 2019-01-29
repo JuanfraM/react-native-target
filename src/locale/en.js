@@ -8,7 +8,11 @@ export default {
     connectFacebook: 'CONNECT WITH FACEBOOK'
   },
   SIGN_UP: {
-    title: 'SIGN UP'
+    title: 'SIGN UP',
+    email: 'EMAIL',
+    name: 'NAME',
+    password: 'PASSWORD',
+    gender: 'GENDER'
   },
 
   MAIN_SCREEN: {
