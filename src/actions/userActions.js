@@ -25,6 +25,19 @@ export const login = user =>
     }
   };
 
+export const signUp = user =>
+  async (dispatch) => {
+    try {
+      const response = await userApi.signUp({ user });
+      await sessionService.saveUser(response.user);
+      dispatch(loginSuccess());
+    } catch (err) {
+      throw new SubmissionError({
+        _error: err.error,
+      });
+    }
+  };
+
 export const logout = () =>
   async (dispatch) => {
     try {

@@ -3,32 +3,33 @@ import PropTypes from 'prop-types';
 import { Text, View, ImageBackground } from 'react-native';
 import { connect } from 'react-redux';
 
-import { login } from 'actions/userActions';
+import { signUp } from 'actions/userActions';
 import SignUpForm from 'components/user/SignUpForm';
 import imageSource from '../../assets/images/group.png';
 import styles from './styles';
 
-const SignUpScreen = ({ login, navigator }) => (
+const SignUpScreen = ({ signUp, navigator }) => (
   <View style={styles.container}>
     <ImageBackground source={imageSource} style={styles.image}>
       <Text style={styles.textCenter}>TARGET MVD</Text>
     </ImageBackground>
-    <SignUpForm onSubmit={user => login(user.toJS())} navigator={navigator} />
+    <SignUpForm onSubmit={user => signUp(user.toJS())} navigator={navigator} />
   </View>
 );
 
-const { func } = PropTypes;
+const { func, object } = PropTypes;
 
 SignUpScreen.propTypes = {
-  login: func.isRequired
+  signUp: func.isRequired,
+  navigator: object.isRequired
 };
 
 SignUpScreen.navigationOptions = {
-  title: 'Log Up'
+  title: 'Sign Up'
 };
 
 const mapDispatch = dispatch => ({
-  login: user => dispatch(login(user))
+  signUp: user => dispatch(signUp(user))
 });
 
 export default connect(null, mapDispatch)(SignUpScreen);

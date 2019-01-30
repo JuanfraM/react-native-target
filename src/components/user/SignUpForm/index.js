@@ -1,27 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form/immutable';
-import { View, Text, Picker } from 'react-native';
+import { View, Text } from 'react-native';
 
 import * as constraints from 'utils/constraints';
 import Input from 'components/common/Input';
 import Button from 'components/common/Button';
 import translate from 'utils/i18n';
-import { login } from 'actions/userActions';
 import styles from './styles';
 import { whiteColor } from '../../../constants/styleConstants';
 import { screens } from '../../../constants/screenConstants';
 
 const SignUpForm = ({ handleSubmit, error, navigator }) => {
-  let gender = {gender: ''};
   const onPress = () => {
     navigator.push({
       screen: screens.signUp
     });
-  };
-
-  const updateGender = (g) => {
-    gender = {gender: g}
   };
 
   return (
@@ -43,18 +37,9 @@ const SignUpForm = ({ handleSubmit, error, navigator }) => {
         component={Input}
         password
       />
-      <Picker
-        selectedValue={gender}
-        style={styles.pickerContainer}
-        itemStyle={styles.pickerText}
-        onValueChange={updateGender}
-      >
-        <Picker.Item label="Male" value="Male" />
-        <Picker.Item label="Female" value="Female" />
-      </Picker>
       <Button
         title={translate('SIGN_UP.title')}
-        handleSubmit={user => login(user.toJS())}
+        onPress={handleSubmit}
         containerStyle={styles.buttonContainer}
         textStyle={styles.buttonText}
       />
@@ -78,6 +63,6 @@ SignUpForm.propTypes = {
 };
 
 export default reduxForm({
-  form: 'login',
-  validate: constraints.validations(constraints.login)
+  form: 'signUp',
+  validate: constraints.validations(constraints.signUp)
 })(SignUpForm);
