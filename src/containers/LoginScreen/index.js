@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import { login } from 'actions/userActions';
 import LoginForm from 'components/user/LoginForm';
-import imageSource from '../../assets/images/group.png';
+import imageSource from 'assets/images/group.png';
 import styles from './styles';
 
 const LoginScreen = ({ login, navigator }) => (
@@ -26,6 +26,10 @@ LoginScreen.propTypes = {
 
 LoginScreen.navigationOptions = {
   title: 'Log In'
+};
+
+LoginScreen.navigatorStyle = {
+  navBarHidden: true
 };
 
 const mapDispatch = dispatch => ({

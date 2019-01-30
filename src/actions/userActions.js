@@ -16,11 +16,11 @@ export const login = user =>
   async (dispatch) => {
     try {
       const response = await userApi.login({ user });
-      await sessionService.saveUser(response.user);
+      await sessionService.saveUser(response.data);
       dispatch(loginSuccess());
-    } catch ({ error }) {
+    } catch (err) {
       throw new SubmissionError({
-        error,
+        _error: err.error,
       });
     }
   };
@@ -29,11 +29,11 @@ export const signUp = user =>
   async (dispatch) => {
     try {
       const response = await userApi.signUp({ user });
-      await sessionService.saveUser(response.user);
+      await sessionService.saveUser(response);
       dispatch(loginSuccess());
-    } catch ({ error }) {
+    } catch (err) {
       throw new SubmissionError({
-        error,
+        _error: err.error,
       });
     }
   };

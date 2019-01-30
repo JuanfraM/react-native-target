@@ -17,7 +17,7 @@ const { style } = ViewPropTypes;
 LinkButton.propTypes = {
   title: string,
   containerStyle: style,
-  textStyle: Text.propTypes.style,
+  textStyle: style,
   onPress: func
 };
 

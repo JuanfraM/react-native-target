@@ -8,9 +8,9 @@ import Input from 'components/common/Input';
 import Button from 'components/common/Button';
 import LinkButton from 'components/common/LinkButton';
 import translate from 'utils/i18n';
+import { whiteColor } from 'constants/styleConstants';
+import { screens } from 'constants/screenConstants';
 import styles from './styles';
-import { whiteColor } from '../../../constants/styleConstants';
-import { screens } from '../../../constants/screenConstants';
 
 const LoginForm = ({ handleSubmit, error, navigator }) => {
   const redirectToSignUp = () => {
@@ -61,7 +61,7 @@ const LoginForm = ({ handleSubmit, error, navigator }) => {
         />
       </View>
     </View>
-  )
+  );
 };
 
 const { func, string, object } = PropTypes;

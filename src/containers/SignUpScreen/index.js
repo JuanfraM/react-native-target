@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import { signUp } from 'actions/userActions';
 import SignUpForm from 'components/user/SignUpForm';
-import imageSource from '../../assets/images/group.png';
+import imageSource from 'assets/images/group.png';
 import styles from './styles';
 
 const SignUpScreen = ({ signUp, navigator }) => (
@@ -26,6 +26,10 @@ SignUpScreen.propTypes = {
 
 SignUpScreen.navigationOptions = {
   title: 'Sign Up'
+};
+
+SignUpScreen.navigatorStyle = {
+  navBarHidden: true
 };
 
 const mapDispatch = dispatch => ({
