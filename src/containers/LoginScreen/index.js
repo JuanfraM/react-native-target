@@ -1,26 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text, View } from 'react-native';
+import { Text, View, ImageBackground } from 'react-native';
 import { connect } from 'react-redux';
 
-import LoginForm from 'components/user/LoginForm';
 import { login } from 'actions/userActions';
-import translate from 'utils/i18n';
+import LoginForm from 'components/user/LoginForm';
+import imageSource from '../../assets/images/group.png';
 import styles from './styles';
 
-const LoginScreen = ({ login }) => (
+const LoginScreen = ({ login, navigator }) => (
   <View style={styles.container}>
-    <Text style={styles.welcome}>
-      {translate('SIGN_IN.title')}
-    </Text>
-    <LoginForm onSubmit={user => login(user.toJS())} />
+    <ImageBackground source={imageSource} style={styles.image}>
+      <Text style={styles.textCenter}>TARGET MVD</Text>
+    </ImageBackground>
+    <LoginForm onSubmit={user => login(user.toJS())} navigator={navigator} />
   </View>
 );
 
-const { func } = PropTypes;
+const { func, object } = PropTypes;
 
 LoginScreen.propTypes = {
-  login: func.isRequired
+  login: func.isRequired,
+  navigator: object.isRequired
 };
 
 LoginScreen.navigationOptions = {
