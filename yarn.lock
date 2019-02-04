@@ -6212,6 +6212,11 @@ react-native-navigation@1.1.440:
   dependencies:
     lodash "4.x.x"
 
+react-native-responsive-screen@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-responsive-screen/-/react-native-responsive-screen-1.2.0.tgz#82cc22902c5424527aba74d724611d989735f884"
+  integrity sha512-Mat3aWHu9LD/BoIzLpiSMVJt2cfnoETF95ecXmtUAs3LHTRoxWpgH1yNPBme9FclYaHYuWeqyQlf2S/re9Xspw==
+
 react-native@0.55.3:
   version "0.55.3"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.55.3.tgz#6ff1691bd0645d0480fba16377edb9dce5bd28c4"

@@ -17,7 +17,7 @@ const LoginForm = ({ handleSubmit, error, navigator }) => {
     navigator.push({
       screen: screens.signUp
     });
-  }
+  };
 
   return (
     <View style={styles.login} onSubmit={handleSubmit}>

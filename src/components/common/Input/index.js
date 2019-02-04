@@ -3,15 +3,14 @@ import PropTypes from 'prop-types';
 import { View, TextInput, Text, ViewPropTypes } from 'react-native';
 import styles from './styles';
 
-const Input = (
-  { input: { onChange, ...restInput },
-    autoCapitalize = 'none',
-    inputContainer,
-    password = false,
-    label,
-    meta: { touched, error }
-  }
-) => (
+const Input = ({
+  input: { onChange, ...restInput },
+  autoCapitalize = 'none',
+  inputContainer,
+  password = false,
+  label,
+  meta: { touched, error }
+}) => (
   <View style={[styles.inputContainer, inputContainer]}>
     {label && <Text style={styles.label}>{label}</Text>}
     <View>

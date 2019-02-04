@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import {
   redColor,
   blackColor,
@@ -10,16 +11,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 1,
     top: 200,
-    width: 80
+    width: wp('80%')
   },
   error: {
     color: redColor
   },
   buttonContainer: {
     backgroundColor: blackColor,
-    height: 37,
+    height: hp('6%'),
     marginTop: 30,
-    width: 114
+    width: wp('40%')
   },
   buttonText: {
     color: whiteColor,
@@ -28,9 +29,9 @@ const styles = StyleSheet.create({
   buttonSignInContainer: {
     backgroundColor: whiteColor,
     borderTopWidth: 1,
-    height: 37,
+    height: hp('6%'),
     marginTop: 19,
-    width: 121
+    width: wp('41%')
   },
   buttonSignInText: {
     color: blackColor,
@@ -38,8 +39,8 @@ const styles = StyleSheet.create({
   },
   pickerContainer: {
     backgroundColor: whiteColor,
-    height: 37,
-    width: 230,
+    height: hp('37%'),
+    width: wp('230%'),
     borderWidth: 1,
   },
   pickerText: {
