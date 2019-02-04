@@ -18,9 +18,9 @@ export const login = user =>
       const response = await userApi.login({ user });
       await sessionService.saveUser(response.user);
       dispatch(loginSuccess());
-    } catch (err) {
+    } catch ({ error }) {
       throw new SubmissionError({
-        _error: err.error,
+        error,
       });
     }
   };
@@ -31,9 +31,9 @@ export const signUp = user =>
       const response = await userApi.signUp({ user });
       await sessionService.saveUser(response.user);
       dispatch(loginSuccess());
-    } catch (err) {
+    } catch ({ error }) {
       throw new SubmissionError({
-        _error: err.error,
+        error,
       });
     }
   };
