@@ -3,12 +3,20 @@ import PropTypes from 'prop-types';
 import { View, TextInput, Text, ViewPropTypes } from 'react-native';
 import styles from './styles';
 
-const Input = ({ input: { onChange, ...restInput }, inputContainer, password = false, label, meta: { touched, error } }) => (
+const Input = ({
+  input: { onChange, ...restInput },
+  autoCapitalize = 'none',
+  inputContainer,
+  password = false,
+  label,
+  meta: { touched, error }
+}) => (
   <View style={[styles.inputContainer, inputContainer]}>
     {label && <Text style={styles.label}>{label}</Text>}
     <View>
       <TextInput
         style={styles.input}
+        autoCapitalize={autoCapitalize}
         onChangeText={onChange}
         secureTextEntry={password}
         {...restInput}
@@ -25,6 +33,7 @@ Input.propTypes = {
   input: object.isRequired,
   inputContainer: style,
   label: string,
+  autoCapitalize: string,
   meta: object,
   password: bool
 };
