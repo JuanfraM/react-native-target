@@ -16,7 +16,8 @@ const styles = StyleSheet.create({
     width: 230
   },
   error: {
-    color: redColor
+    color: redColor,
+    height: 15,
   }
 });
 

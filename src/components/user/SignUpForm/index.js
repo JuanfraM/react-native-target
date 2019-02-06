@@ -6,23 +6,26 @@ import { View, Text } from 'react-native';
 import * as constraints from 'utils/constraints';
 import Input from 'components/common/Input';
 import Button from 'components/common/Button';
+import CustomPicker from 'components/common/CustomPicker';
 import translate from 'utils/i18n';
+import { whiteColor } from 'constants/styleConstants';
+import { screens } from 'constants/screenConstants';
 import styles from './styles';
-import { whiteColor } from '../../../constants/styleConstants';
-import { screens } from '../../../constants/screenConstants';
 
 const SignUpForm = ({ handleSubmit, error, navigator }) => {
-  const onPress = () => {
+  const redirectToSignIn = () => {
     navigator.push({
-      screen: screens.signUp
+      screen: screens.login
     });
   };
+
+  const genders = ['SELECT YOUR GENDER', 'male', 'female'];
 
   return (
     <View style={styles.container} onSubmit={handleSubmit}>
       {error && <Text style={styles.error}>{error}</Text>}
       <Field
-        name="name"
+        name="username"
         label={translate('SIGN_UP.name')}
         component={Input}
       />
@@ -37,6 +40,16 @@ const SignUpForm = ({ handleSubmit, error, navigator }) => {
         component={Input}
         password
       />
+      <Field
+        name="gender"
+        label={translate('SIGN_UP.gender')}
+        component={CustomPicker}
+        pickerContainer={styles.pickerContainer}
+        pickerLabel={styles.pickerLabel}
+        pickerText={styles.pickerText}
+        selected={genders[0]}
+        options={genders}
+      />
       <Button
         title={translate('SIGN_UP.title')}
         onPress={handleSubmit}
@@ -45,13 +58,13 @@ const SignUpForm = ({ handleSubmit, error, navigator }) => {
       />
       <Button
         title={translate('SIGN_IN.title')}
-        handleSubmit={onPress}
+        onPress={redirectToSignIn}
         underlayColor={whiteColor}
         containerStyle={styles.buttonSignInContainer}
         textStyle={styles.buttonSignInText}
       />
     </View>
-  )
+  );
 };
 
 const { func, string, object } = PropTypes;

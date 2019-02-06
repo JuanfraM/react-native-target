@@ -16,7 +16,7 @@ export const login = user =>
   async (dispatch) => {
     try {
       const response = await userApi.login({ user });
-      await sessionService.saveUser(response.user);
+      await sessionService.saveUser(response.data);
       dispatch(loginSuccess());
     } catch (err) {
       throw new SubmissionError({
@@ -29,7 +29,7 @@ export const signUp = user =>
   async (dispatch) => {
     try {
       const response = await userApi.signUp({ user });
-      await sessionService.saveUser(response.user);
+      await sessionService.saveUser(response);
       dispatch(loginSuccess());
     } catch (err) {
       throw new SubmissionError({

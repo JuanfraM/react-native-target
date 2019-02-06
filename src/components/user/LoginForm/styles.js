@@ -1,68 +1,71 @@
 import { StyleSheet } from 'react-native';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import {
   redColor,
   blackColor,
-  whiteColor
+  whiteColor,
+  primaryFont,
+  secondaryFont
 } from '../../../constants/styleConstants';
 
 const styles = StyleSheet.create({
   login: {
     alignItems: 'center',
     flex: 1,
+    marginTop: 19,
     top: 200,
-    width: 210
+    width: wp('80%')
   },
   formSection: {
     alignItems: 'center',
     flex: 1,
-    width: 180
+    width: wp('70%')
   },
   facebookSection: {
     alignItems: 'center',
     flex: 2,
-    marginTop: 65,
-    width: 210
+    marginTop: hp('12%'),
+    width: wp('80%')
   },
   error: {
     color: redColor
   },
   buttonContainer: {
     backgroundColor: blackColor,
-    height: 37,
+    height: hp('6%'),
     marginTop: 10,
-    width: 114
+    width: wp('35%')
   },
   buttonText: {
     color: whiteColor,
     fontSize: 11,
   },
   linkForgotContainer: {
-    height: 14,
+    height: hp('2%'),
     marginTop: 18
   },
   linkForgotText: {
-    fontFamily: 'OpenSans-Semibold',
+    fontFamily: primaryFont,
     fontSize: 11,
   },
   linkFacebookContainer: {
-    height: 17,
-    width: 230
+    height: hp('3%'),
   },
   linkFacebookText: {
-    fontFamily: 'OpenSans-Bold',
+    fontFamily: secondaryFont,
     fontSize: 12,
     letterSpacing: 3.5
   },
   signUpContainer: {
     backgroundColor: whiteColor,
     borderTopWidth: 1,
-    height: 45,
-    marginTop: 60,
-    width: 120
+    height: hp('7%'),
+    marginTop: hp('7%'),
+    width: wp('37%')
   },
   signUpText: {
     color: blackColor,
-    fontFamily: 'OpenSans-Semibold',
+    fontFamily: primaryFont,
     fontSize: 11,
     letterSpacing: 1.5
   }
