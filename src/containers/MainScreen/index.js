@@ -3,7 +3,7 @@ import { string, func } from 'prop-types';
 import { View, Text, Button } from 'react-native';
 import { connect } from 'react-redux';
 
-import MapView from 'react-native-maps';
+import CustomMap from 'components/target/CustomMap';
 import PrimaryHeader from 'components/common/PrimaryHeader';
 import Footer from 'components/common/Footer';
 import { getUser } from 'selectors/sessionSelector';
@@ -14,11 +14,10 @@ const MainScreen = ({ username, logout }) => (
   <View style={styles.container}>
     <PrimaryHeader />
     <View style={styles.mapContainer}>
-      <MapView
-        style={styles.map}
+      <CustomMap
         initialRegion={{
-          latitude: 37.78825,
-          longitude: -122.4324,
+          latitude: -34.901112,
+          longitude: -56.164532,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}

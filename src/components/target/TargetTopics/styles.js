@@ -3,10 +3,12 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
     flex: 1,
-    justifyContent: 'center'
+    width: wp('100%'),
+    height: hp('60%')
+  },
+  modal: {
+    
   }
 });
 

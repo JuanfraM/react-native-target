@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableHighlight, Image } from 'react-native';
 import newTargetImage from 'assets/images/newTarget.png';
+import TargetTopics from 'components/target/TargetTopics';
 import styles from './styles';
 
 const Footer = () => {
@@ -13,6 +14,7 @@ const Footer = () => {
         <Image source={newTargetImage} style={styles.image} />
       </TouchableHighlight>
       <Text style={[styles.title]}>CREATE NEW TARGET</Text>
+      <TargetTopics />
     </View>
   );
 };
